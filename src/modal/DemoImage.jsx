@@ -77,7 +77,7 @@ const DemoImage = ({
           </div>
           <div className="p-[6px] pr-[2px] cursor-pointer" onClick={closeModal}>
             <img
-              src={"/public/close.svg"}
+              src={"/src/assets/svg/close.svg"}
               alt="not found"
               className="w-5 h-5"
             />
@@ -85,7 +85,7 @@ const DemoImage = ({
         </div>
         <div className="relative z-0 mb-3 mx-auto" ref={cardRef}>
           <img
-            src="../public/inner.png"
+            src="/src/assets/png/inner.png"
             alt="img"
             className="mx-auto w-[215px] h-[300px] object-contain "
           />
