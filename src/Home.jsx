@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 import CreateBy from "./modal/CreateBy";
+import DemoImage from "./modal/DemoImage";
 const initialValues = {
   name: "",
   city: "",
@@ -16,6 +17,7 @@ const validationSchema = Yup.object().shape({
 });
 const Home = () => {
     const[forModal,setForModal] =useState(false);
+    const [forDemoModal,setForDemoModal] = useState(false);
   const [data, setData] = useState(initialValues);
   const [contentWidth, setContentWidth] = useState(0);
   const [contentHeight, setContentHeight] = useState(0);
@@ -29,12 +31,13 @@ const Home = () => {
   }, [data]); // Trigger recalculation when data changes
   const onSubmit = (values) => {
     setData(values);
-    handleImageGenerate();
+    setForDemoModal(true);
+    
   };
   const handleImageGenerate = () => {
     html2canvas(cardRef.current, {
-      width: contentWidth,
-      height: contentHeight,
+      width:216,
+      height: 300,
     }).then(function (canvas) {
       const link = document.createElement("a");
       link.download = "card.png";
@@ -42,8 +45,11 @@ const Home = () => {
       link.click();
     });
   };
+  
+  
+  
   return (
-    <div className="sm:max-w-[350px] md:max-w-[430px] mx-auto mt-4 mb-5 px-5">
+    <div className="sm:max-w-[350px] md:max-w-[430px] mx-auto mt-4 mb-2  px-5">
       <div className="flex flex-col items-center justify-center gap-2 mb-5">
         <h2 className="text-[30px] font-bold">સેવા સેતુ</h2>
         <p className="tetx-[15px] font-medium">
@@ -53,24 +59,24 @@ const Home = () => {
           શેર કરો જેથી કોઈક મિત્રોને કામ આવી શકે છે..
         </p>
       </div>
-      <div className="relative z-0 mb-3" ref={cardRef}>
+      <div className="relative z-0 mb-3" ref={cardRef} >
         <img
-          src="../public/nature.jpg"
+          src="../public/main.png"
           alt="img"
-          className="mx-auto w-[250px] h-[200px] object-cover mb-3"
+          className="mx-auto w-[250px] h-[300px] object-contain mb-3"
         />
-        <div className="absolute z-30 top-[5%] left-[5%] flex items-center gap-[50px]">
-          <p className="text-white text-[20px]">
-            {data.name} {data.city}
-          </p>
-          {data.image && (
-            <img
-              src={URL.createObjectURL(data.image)}
-              alt="Selected Image"
-              className="w-[150px] h-[150px] rounded-[100%]"
-            />
-          )}
-        </div>
+          {/* <div className="absolute z-30 top-[5%] left-[5%] flex items-center gap-[50px]">
+            <p className="text-white text-[20px]">
+              {data.name} {data.city}
+            </p>
+            {data.image && (
+              <img
+                src={URL.createObjectURL(data.image)}
+                alt="Selected Image"
+                className="w-[150px] h-[150px] rounded-[100%] object-fill"
+              />
+            )}
+          </div> */}
       </div>
       <Formik
         initialValues={initialValues}
@@ -117,6 +123,7 @@ const Home = () => {
                 id="image"
                 name="image"
                 type="file"
+                
                 className=" border  rounded-lg border-gray-400 outline-none w-full py-[0.375rem] px-[0.75rem]"
                 onChange={(event) => {
                   setFieldValue("image", event.currentTarget.files[0]);
@@ -150,6 +157,8 @@ const Home = () => {
         </p>
       </div>
       <CreateBy forModal={forModal} setForModal={setForModal}/>
+      <DemoImage forDemoModal={forDemoModal} setForDemoModal={setForDemoModal} cardRef={cardRef} data={data} handleImageGenerate={handleImageGenerate}/>
+      
     </div>
   );
 };

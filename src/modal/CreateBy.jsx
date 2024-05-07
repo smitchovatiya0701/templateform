@@ -27,7 +27,21 @@ const CreateBy = ({
     closeModal(); // Close the modal after deletion
     toast.success("Successfully deleted!");
   };
-
+  const handleOpenEmail = () => {
+    window.open(`mailto:${`ekceroinfotech@gmail.com`}`);
+  };
+  const handleOpenContact1 = () => {
+    window.open(`tel:${`+9194093 27827`}`);
+  };
+  const handleOpenContact = () => {
+    window.open(`tel:${`+9197730 63667`}`);
+  };
+  const handleOpenfb = () => {
+    window.open(`https://www.facebook.com/ekceroinfotech`);
+  };
+  const handleOpenInsta = () => {
+    window.open(`https://www.instagram.com/ekcero_infotech?igsh=MWFlYXp6N2xuc2V5YQ==`);
+  };
   useEffect(() => {
     if (forModal) {
       openModal();
@@ -79,24 +93,40 @@ const CreateBy = ({
           <h4 className="font-bold text-[18px]">Ekcero Infotech</h4>
           <div className="flex flex-col gap-0.5 w-full">
             <h5 className="font-medium text-[14px] text-black"> Email :</h5>
-            <span className="p-2 w-full text-[#242424] text-[14px] font-bold border border-gray-700 rounded-lg">
+            <span
+              onClick={handleOpenEmail}
+              className="p-2 w-full text-[#242424] text-[14px] font-bold border border-gray-700 rounded-lg cursor-pointer"
+            >
               ekceroinfotech@gmail.com
             </span>
           </div>
           <div className="flex flex-col gap-0.5 w-full">
             <h5 className="font-medium text-[14px] text-black"> Mobile :</h5>
             <span className="p-2 w-full text-[#242424] text-[14px]  border border-gray-700 rounded-lg font-bold">
-              +9197730 63667 &nbsp;|&nbsp; +9194093 27827
+              <p onClick={handleOpenContact} className="inline">
+                {" "}
+                +9197730 63667
+              </p>{" "}
+              &nbsp;|&nbsp;{" "}
+              <p onClick={handleOpenContact1} className="inline">
+                +9194093 27827
+              </p>
             </span>
           </div>
           <div className="flex flex-col gap-1 w-full">
             <h4>Social Links:</h4>
             <div className="flex gap-3">
-              <div className="flex gap-1 items-center bg-blue-700 py-1 px-3 hover:bg-blue-800 rounded-lg cursor-pointer">
+              <div
+                onClick={handleOpenfb}
+                className="flex gap-1 items-center bg-blue-700 py-1 px-3 hover:bg-blue-800 rounded-lg cursor-pointer"
+              >
                 <img src="/public/facebook.svg" className="w-4 h-4" />
                 <span className="text-white text-[15px]">Facebook</span>
               </div>
-              <div className="flex items-center gap-1 bg-red-600 py-1 px-3 hover:bg-red-700 rounded-lg cursor-pointer">
+              <div
+                onClick={handleOpenInsta}
+                className="flex items-center gap-1 bg-red-600 py-1 px-3 hover:bg-red-700 rounded-lg cursor-pointer"
+              >
                 <img src="/public/insta.svg" className="w-4 h-4" />
                 <span className="text-white text-[15px]">Instagram</span>
               </div>
