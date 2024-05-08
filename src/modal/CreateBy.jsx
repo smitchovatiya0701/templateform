@@ -83,7 +83,7 @@ const CreateBy = ({
           </div>
           <div className="p-[6px] pr-[2px] cursor-pointer" onClick={closeModal}>
             <img
-              src={"/src/assets/svgs/close.svg"}
+              src={"/svgs/close.svg"}
               alt="not found"
               className="w-5 h-5"
             />
@@ -120,14 +120,14 @@ const CreateBy = ({
                 onClick={handleOpenfb}
                 className="flex gap-1 items-center bg-blue-700 py-1 px-3 hover:bg-blue-800 rounded-lg cursor-pointer"
               >
-                <img src="/src/assets/svgs/facebook.svg" className="w-4 h-4" />
+                <img src="/svgs/facebook.svg" className="w-4 h-4" />
                 <span className="text-white text-[15px]">Facebook</span>
               </div>
               <div
                 onClick={handleOpenInsta}
                 className="flex items-center gap-1 bg-red-600 py-1 px-3 hover:bg-red-700 rounded-lg cursor-pointer"
               >
-                <img src="/src/assets/svgs/insta.svg" className="w-4 h-4" />
+                <img src="/svgs/insta.svg" className="w-4 h-4" />
                 <span className="text-white text-[15px]">Instagram</span>
               </div>
             </div>

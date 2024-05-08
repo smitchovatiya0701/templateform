@@ -61,7 +61,7 @@ const Home = () => {
       </div>
       <div className="relative z-0 mb-3" ref={cardRef} >
         <img
-          src="/src/assets/pngs/main.png"
+          src="/pngs/main.png"
           alt="img"
           className="mx-auto w-[250px] h-[300px] object-contain mb-3"
         />
@@ -138,7 +138,7 @@ const Home = () => {
               className="bg-[#198754] font-medium hover:bg-green-800 w-full text-[1rem]  px-[0.75rem] py-[0.375rem]  text-white cursor-pointer rounded-lg mt-2"
             >
               <img
-                src="/src/assets/svgs/setting.svg"
+                src="/svgs/setting.svg"
                 alt=""
                 className="w-6 inline mr-1"
               />
