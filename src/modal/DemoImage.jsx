@@ -73,7 +73,7 @@ const DemoImage = ({
       <div className="flex flex-col justify-center items-start p-6 gap-[20px]">
         <div className="w-full flex justify-center items-center gap-2">
           <div className="w-full text-[#242424] font-inter text-[17px] font-bold">
-            Demo of Image
+           Your Image
           </div>
           <div className="p-[6px] pr-[2px] cursor-pointer" onClick={closeModal}>
             <img
@@ -99,15 +99,15 @@ const DemoImage = ({
             )}
             
           {/* </div> */}
-          <p className=" absolute  right-[46px] bottom-[29.5%] leading-none text-black text-[10px] mb-1">
+          <p className=" absolute  w-[90px] text-center right-[46px] bottom-[95px] leading-none text-black font-bold  text-[8px]">
               {data.name} / {data.city}
             </p>
         </div>
-        <div className="flex justify-between items-center gap-[10px]">
-          <div>
+        <div className="flex justify-between items-center gap-[10px] w-full">
+          <div className="py-1 text-[12px] px-3 hover:text-white border-gray-600 border rounded-lg hover:bg-slate-500 font-semibold">
             <button onClick={handleImageGenerate}>Download</button>
           </div>
-          <div>
+          <div className="py-1 px-3 text-[12px] hover:text-white border-gray-600 border rounded-lg hover:bg-slate-500 font-semibold">
             <button onClick={handleReset}>Reset</button>
           </div>
         </div>
